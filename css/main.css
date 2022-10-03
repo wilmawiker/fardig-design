@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  color: white;
+}
+
+.startpage-container {
+  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.startpage-container .hamburger-menu .nav-items {
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.286);
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  list-style-type: none;
+}
+.startpage-container .hamburger-menu .nav-items a {
+  text-decoration: none;
+  font-size: 1em;
+}
+.startpage-container .hamburger-menu .nav-items a:hover {
+  cursor: pointer;
+}
+.startpage-container .startpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0% 25%;
+  height: 80vh;
+  margin-top: 20vh;
+}
+.startpage-container a {
+  margin-top: 20vh;
+  font-size: 2em;
+  color: white;
+}
+.startpage-container a:hover {
+  cursor: pointer;
+}
+
+.about-container {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-container .team-members .about {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-container .team-members .about h4 {
+  font-size: 1.5em;
+}
+.about-container .team-members .about img {
+  width: 50%;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.466);
+}
+.about-container .team-members .about .quote-card {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+.about-container .team-members .about .quote-card .bi-quote {
+  font-size: 3em;
+  transform: rotate(180deg);
+}
+.about-container a {
+  font-size: 2em;
+  color: black;
+}
+.about-container a:hover {
+  cursor: pointer;
+}
+
+footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .startpage-container .hamburger-menu .nav-items {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .startpage-container .hamburger-menu .nav-items .list-item {
+    margin-right: 5vw;
+  }
+  .startpage-container .hamburger-menu .nav-items .list-item a {
+    text-decoration: none;
+    font-size: 1em;
+  }
+  .startpage-container .hamburger-menu .nav-items .list-item a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .about-container .team-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .about-container .team-members .about {
+    width: 50%;
+  }
+  footer {
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

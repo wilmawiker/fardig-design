@@ -1,0 +1,157 @@
+@use "variables" as var;
+
+body {
+  margin: 0;
+  color: var.$primary;
+}
+
+.startpage-container {
+  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+
+  .hamburger-menu {
+    .nav-items {
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.286);
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: var.$primary;
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        font-size: 1em;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .startpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0% 25%;
+    height: 80vh;
+    margin-top: 20vh;
+  }
+
+  a {
+    margin-top: 20vh;
+    font-size: 2em;
+    color: var.$primary;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.about-container {
+  background-color: var.$primary;
+  color: var.$secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .team-members {
+    .about {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h4 {
+        font-size: 1.5em;
+      }
+
+      img {
+        width: 50%;
+        border-radius: 50%;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.466);
+      }
+      .quote-card {
+        height: 100px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
+        border-radius: 5px;
+
+        .bi-quote {
+          font-size: 3em;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  a {
+    font-size: 2em;
+    color: var.$secondary;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+footer {
+  background-color: var.$secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .startpage-container {
+    .hamburger-menu {
+      .nav-items {
+        justify-content: flex-end;
+        align-items: center;
+
+        .list-item {
+          margin-right: 5vw;
+
+          a {
+            text-decoration: none;
+            font-size: 1em;
+
+            &:hover {
+              cursor: pointer;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-container {
+    .team-members {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .about {
+        width: 50%;
+      }
+    }
+  }
+
+  footer {
+    flex-direction: row;
+  }
+}
