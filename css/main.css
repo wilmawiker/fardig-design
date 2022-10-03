@@ -23,43 +23,45 @@ body {
 .startpage-container .hamburger-menu .nav-items a {
   text-decoration: none;
   font-size: 1em;
+  color: white;
 }
 .startpage-container .hamburger-menu .nav-items a:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 .startpage-container .startpage {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   padding: 0% 25%;
   height: 80vh;
   margin-top: 20vh;
 }
-.startpage-container a {
+.startpage-container .startpage .arrow-down {
   margin-top: 20vh;
   font-size: 2em;
   color: white;
 }
-.startpage-container a:hover {
+.startpage-container .startpage .arrow-down:hover {
   cursor: pointer;
 }
 
 .about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   color: black;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .about-container .team-members .about {
-  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 .about-container .team-members .about h4 {
   font-size: 1.5em;
@@ -70,11 +72,11 @@ body {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.466);
 }
 .about-container .team-members .about .quote-card {
-  height: 100px;
-  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
+  width: 300px;
   background-color: lightgray;
   border-radius: 5px;
 }
@@ -82,20 +84,20 @@ body {
   font-size: 3em;
   transform: rotate(180deg);
 }
-.about-container a {
+.about-container .arrow-down {
   font-size: 2em;
   color: black;
 }
-.about-container a:hover {
+.about-container .arrow-down:hover {
   cursor: pointer;
 }
 
 footer {
-  background-color: black;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,6 +111,7 @@ footer {
   .startpage-container .hamburger-menu .nav-items .list-item a {
     text-decoration: none;
     font-size: 1em;
+    color: white;
   }
   .startpage-container .hamburger-menu .nav-items .list-item a:hover {
     cursor: pointer;

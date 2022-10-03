@@ -1,4 +1,5 @@
 @use "variables" as var;
+@use "mixins" as mix;
 
 body {
   margin: 0;
@@ -6,10 +7,7 @@ body {
 }
 
 .startpage-container {
-  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  @include mix.bg-image;
   height: 100vh;
 
   .hamburger-menu {
@@ -24,53 +22,37 @@ body {
       list-style-type: none;
 
       a {
-        text-decoration: none;
-        font-size: 1em;
-
-        &:hover {
-          cursor: pointer;
-        }
+        @include mix.link-style(1em);
       }
     }
   }
 
   .startpage {
-    display: flex;
+    @include mix.container;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     padding: 0% 25%;
     height: 80vh;
     margin-top: 20vh;
-  }
 
-  a {
-    margin-top: 20vh;
-    font-size: 2em;
-    color: var.$primary;
-
-    &:hover {
-      cursor: pointer;
+    .arrow-down {
+      margin-top: 20vh;
+      @include mix.arrow-down(var.$primary);
     }
   }
 }
 
 .about-container {
+  @include mix.container;
   background-color: var.$primary;
   color: var.$secondary;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   .team-members {
     .about {
+      @include mix.container;
       height: 100vh;
-      display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       h4 {
         font-size: 1.5em;
@@ -82,11 +64,9 @@ body {
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.466);
       }
       .quote-card {
+        @include mix.container;
         height: 100px;
         width: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: lightgray;
         border-radius: 5px;
 
@@ -98,22 +78,15 @@ body {
     }
   }
 
-  a {
-    font-size: 2em;
-    color: var.$secondary;
-
-    &:hover {
-      cursor: pointer;
-    }
+  .arrow-down {
+    @include mix.arrow-down(var.$secondary);
   }
 }
 
 footer {
+  @include mix.container;
   background-color: var.$secondary;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -127,13 +100,7 @@ footer {
           margin-right: 5vw;
 
           a {
-            text-decoration: none;
-            font-size: 1em;
-
-            &:hover {
-              cursor: pointer;
-              text-decoration: underline;
-            }
+            @include mix.link-style(1em);
           }
         }
       }
