@@ -11,62 +11,65 @@ body {
   @include mix.bg-image;
   height: 100vh;
 
-  .header {
-    background-color: rgba(255, 255, 255, 0.401);
-    width: 100%;
-  }
-
-  .header .nav-items {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    list-style: none;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.047);
-    clear: both;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-  }
-
-  .header .nav-items li .list-item {
-    @include mix.link-style(1em);
-    display: block;
-    padding: 20px 20px;
-    text-decoration: none;
-  }
-
-  .header .nav-items li .list-item:hover,
+  .header .header-items li .list-item:hover,
   .header .menu-btn:hover {
     text-decoration: underline;
   }
 
-  .header .logo {
-    display: block;
-    float: left;
-    font-size: 2em;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
+  .header {
+    background-color: rgba(255, 255, 255, 0.401);
+    width: 100%;
 
-  .header .menu-icon {
-    cursor: pointer;
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-  }
+    .header-items {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      list-style: none;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.047);
+      clear: both;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
 
-  .header .menu-icon .navicon {
-    background: rgb(255, 255, 255);
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background 0.2s ease-out;
-    width: 18px;
-  }
+      li .list-item {
+        @include mix.link-style(1em);
+        display: block;
+        padding: 20px 20px;
+        text-decoration: none;
+      }
+    }
 
-  .header .menu-icon .navicon:active {
-    display: block;
-    background-color: rgb(0, 153, 255);
+    .logo {
+      display: block;
+      float: left;
+      font-size: 2em;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+
+      .navicon {
+        background: rgb(255, 255, 255);
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+
+        &:active {
+          display: block;
+          background-color: rgb(0, 153, 255);
+        }
+      }
+    }
+    .menu-btn {
+      display: none;
+    }
   }
 
   .header .menu-icon .navicon:before,
@@ -86,10 +89,6 @@ body {
 
   .header .menu-icon .navicon:after {
     top: -5px;
-  }
-
-  .header .menu-btn {
-    display: none;
   }
 
   .header .menu-btn:checked ~ .nav-items {
@@ -188,11 +187,12 @@ footer {
     }
     .header li {
       float: left;
+      .list-item {
+        padding: 20px 30px;
+      }
     }
-    .header li .list-item {
-      padding: 20px 30px;
-    }
-    .header .nav-items {
+
+    .header .header-items {
       clear: none;
       float: right;
       max-height: none;
