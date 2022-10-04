@@ -2,6 +2,7 @@
 @use "mixins" as mix;
 
 body {
+  padding: 0;
   margin: 0;
   color: var.$primary;
 }
@@ -10,21 +11,105 @@ body {
   @include mix.bg-image;
   height: 100vh;
 
-  .hamburger-menu {
-    .nav-items {
-      height: 60px;
-      background-color: rgba(255, 255, 255, 0.286);
-      margin: 0;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      color: var.$primary;
-      list-style-type: none;
+  .header {
+    background-color: rgba(255, 255, 255, 0.401);
+    width: 100%;
+  }
 
-      a {
-        @include mix.link-style(1em);
-      }
-    }
+  .header ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.047);
+  }
+
+  .header .nav-items li .list-item {
+    @include mix.link-style(1em);
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+
+  .header .nav-items li .list-item:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
+  .header .nav-items {
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .header .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: rgb(255, 255, 255);
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  .header .menu-btn {
+    display: none;
+  }
+
+  .header .menu-btn:checked ~ .nav-items {
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
   }
 
   .startpage {
@@ -91,19 +176,24 @@ footer {
 
 @media screen and (min-width: 768px) {
   .startpage-container {
-    .hamburger-menu {
-      .nav-items {
-        justify-content: flex-end;
-        align-items: center;
-
-        .list-item {
-          margin-right: 5vw;
-
-          a {
-            @include mix.link-style(1em);
-          }
-        }
-      }
+    margin: 0;
+    .header {
+      display: flex;
+      justify-content: end;
+    }
+    .header li {
+      float: left;
+    }
+    .header li .list-item {
+      padding: 20px 30px;
+    }
+    .header .nav-items {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
     }
   }
 
