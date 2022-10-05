@@ -19,6 +19,7 @@ body {
   .header {
     background-color: rgba(255, 255, 255, 0.401);
     width: 100%;
+    position: absolute;
 
     .header-items {
       margin: 0;
@@ -37,14 +38,6 @@ body {
         padding: 20px 20px;
         text-decoration: none;
       }
-    }
-
-    .logo {
-      display: block;
-      float: left;
-      font-size: 2em;
-      padding: 10px 20px;
-      text-decoration: none;
     }
 
     .menu-icon {
@@ -91,7 +84,7 @@ body {
     top: -5px;
   }
 
-  .header .menu-btn:checked ~ .nav-items {
+  .header .menu-btn:checked ~ .header-items {
     max-height: 240px;
   }
 
@@ -116,11 +109,11 @@ body {
     @include mix.container;
     flex-direction: column;
     text-align: center;
-    padding: 0% 25%;
+    padding: 15vh 25%;
     height: 100vh;
 
     .arrow-down {
-      margin-top: 40vh;
+      margin-top: 30vh;
       @include mix.arrow-down(var.$primary);
     }
   }
