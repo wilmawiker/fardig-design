@@ -146,6 +146,7 @@ body {
       }
       .quote-card {
         @include mix.container;
+        align-items: baseline;
         height: 100px;
         width: 300px;
         background-color: lightgray;
